@@ -1,0 +1,47 @@
+set_property PACKAGE_PIN AW21 [get_ports {mdio_mdc                    }] 
+set_property PACKAGE_PIN AR22 [get_ports {mdio_mdio_io            }] 
+set_property PACKAGE_PIN AL20 [get_ports {phy_reset_n                  }] 
+set_property PACKAGE_PIN AT20 [get_ports {rgmii_rxc                  }] 
+set_property PACKAGE_PIN AU19 [get_ports {rgmii_rx_ctl            }] 
+set_property PACKAGE_PIN AR19 [get_ports {rgmii_rd[0]              }] 
+set_property PACKAGE_PIN AP19 [get_ports {rgmii_rd[1]              }] 
+set_property PACKAGE_PIN AN22 [get_ports {rgmii_rd[2]              }] 
+set_property PACKAGE_PIN AW22 [get_ports {rgmii_rd[3]              }] 
+set_property PACKAGE_PIN AK22 [get_ports {rgmii_txc                  }] 
+set_property PACKAGE_PIN AV22 [get_ports {rgmii_tx_ctl            }] 
+set_property PACKAGE_PIN AR20 [get_ports {rgmii_td[0]              }] 
+set_property PACKAGE_PIN AP20 [get_ports {rgmii_td[1]              }] 
+set_property PACKAGE_PIN AJ22 [get_ports {rgmii_td[2]              }] 
+set_property PACKAGE_PIN AP22 [get_ports {rgmii_td[3]              }] 
+ 
+set_property IOSTANDARD LVCMOS18 [get_ports {mdio_mdc                    }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {mdio_mdio_io            }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {phy_reset_n                  }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_rxc                  }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_rx_ctl            }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_rd[0]              }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_rd[1]              }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_rd[2]              }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_rd[3]              }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_txc                  }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_tx_ctl            }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_td[0]              }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_td[1]              }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_td[2]              }] 
+set_property IOSTANDARD LVCMOS18 [get_ports {rgmii_td[3]              }] 
+
+set_property UNAVAILABLE_DURING_CALIBRATION TRUE [get_ports mdio_mdio_io]
+set_property DRIVE 8 [get_ports rgmii_txc]
+set_property DRIVE 8 [get_ports rgmii_tx_ctl]
+set_property DRIVE 8 [get_ports {rgmii_td[*]}]
+
+
+
+set_property IODELAY_GROUP rgmii_group [get_cells design_1_i/gmii_to_rgmii_0/U0/i_design_1_gmii_to_rgmii_0_0_idelayctrl]
+set_property IODELAY_GROUP rgmii_group [get_cells design_1_i/gmii_to_rgmii_0/U0/i_gmii_to_rgmii_block/design_1_gmii_to_rgmii_0_0_core/i_gmii_to_rgmii/i_gmii_to_rgmii/gen_rgmii_rx_zqup.delay_rgmii_rx_ctl]
+set_property IODELAY_GROUP rgmii_group [get_cells design_1_i/gmii_to_rgmii_0/U0/i_gmii_to_rgmii_block/design_1_gmii_to_rgmii_0_0_core/i_gmii_to_rgmii/i_gmii_to_rgmii/gen_rgmii_rx_zqup.rxdata_bus[*].delay_rgmii_rxd]
+set_property DELAY_VALUE 150 [get_cells design_1_i/gmii_to_rgmii_0/U0/i_gmii_to_rgmii_block/design_1_gmii_to_rgmii_0_0_core/i_gmii_to_rgmii/i_gmii_to_rgmii/gen_rgmii_rx_zqup.delay_rgmii_rx_ctl]
+set_property DELAY_VALUE 150 [get_cells design_1_i/gmii_to_rgmii_0/U0/i_gmii_to_rgmii_block/design_1_gmii_to_rgmii_0_0_core/i_gmii_to_rgmii/i_gmii_to_rgmii/gen_rgmii_rx_zqup.rxdata_bus[*].delay_rgmii_rxd]
+
+
+
