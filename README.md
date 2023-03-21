@@ -1,4 +1,4 @@
-# Xilinx Zynq Ultrascale+ MPSoC Series Development Board Z19\
+# Xilinx Zynq Ultrascale+ MPSoC Series Development Board Z19
 ## Introduction to Development Board
 The development board mainly consists of ZU19EG+4 DDR4+DDR4 SODIMMs+eMMC+2 QSPI FLASH
 Composition. The main chip is a Zynq UltraScale+MPSoCs series chip from Xilinx Company, with a model of XCZU19EG-
