@@ -2,7 +2,7 @@
 ## 在LINUX中使用开发板上的接口和外设
 
 ---
-- AXU4EV-P、AXU5EV-P开发板上有这些接口和外设：\
+- Z19开发板上有这些接口和外设：\
 ![](../.images_for_documents/35.png)\
 ①DP\
 ②PS_UART\
