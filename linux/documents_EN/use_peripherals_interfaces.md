@@ -61,15 +61,15 @@ Open the serial port tool, select the corresponding COM, and set the baud rate t
 ![](../.images_for_documents/62.png)\
 **The number of COM depends on your PC. If your PS_UART and PL_UART are all connected to PC, you can see at least two COM suffixes with *Silicon Labs CP210x USB to UART Bridge* :**\
 ![](../.images_for_documents/61.png)\
-In the Linux system of the development board, the PL_UART device is */dev/ttyPS3*, and the default baud rate is 9600. You can use this command to set the baud rate.\
-`stty -F /dev/ttyPS3 ispeed 115200 ospeed 115200 cs8`\
+In the Linux system of the development board, the PL_UART device is */dev/ttyS2*, and the default baud rate is 9600. You can use this command to set the baud rate.\
+`stty -F /dev/ttyS2 ispeed 115200 ospeed 115200 cs8`\
 We set it to 115200 corresponding to the setting of the serial port tool, and then use the following command to print the data received by UART :\
-`cat /dev/ttyPS3`\
+`cat /dev/ttyS2`\
 ![](../.images_for_documents/63.png)\
 Then send some data in the serial port tool, and you can see that the system has received these data :\
 ![](../.images_for_documents/64.png)\
-Press *ctrl v* on the keyboard to exit the *cat /dev/ttyPS3* command, and then use the following command to send data \"*PL_UART test*\" to the PC through PL_UART. The serial port tool can receive data:\
-`echo "PL_UART test" > /dev/ttyPS3`\
+Press *ctrl c* on the keyboard to exit the *cat /dev/ttyS2* command, and then use the following command to send data \"*PL_UART test*\" to the PC through PL_UART. The serial port tool can receive data:\
+`echo "PL_UART test" > /dev/ttyS2`\
 ![](../.images_for_documents/65.png)
 #### 3.3Use the built-in script in Linux to test PL_UART
 Connect the PL_UART to any USB port on the development board :\
@@ -85,7 +85,7 @@ RS485 is a common serial communication protocol, also known as EIA-485 protocol.
 RS485 can support point-to-point communication and multi-point communication between multiple devices, that is, a host can communicate with multiple slaves, and can also achieve communication between multiple slaves, to achieve a flexible network topology. The maximum transmission distance of RS485 can reach 1200 meters, and the transmission speed can reach 10 Mbps. In practical applications, the communication rate of 9600 bps or 115200 bps is usually used.\
 In our development board, RS485 is a PL-end device, which is realized through FPGA IP.
 #### 4.2Using RS485 in Linux
-There are two RS485 channels on the development board. The corresponding device files in the system are */dev/ttyS1* and */dev/ttyS2*. RS485 equipment operates in the same way as PS_UART and PL_UART. However, it should be noted that the **baud rate of these two RS485 is fixed at 9600** due to the IP limit at the PL. Setting baud rate of these two RS485 to other values will prevent the device from working properly.
+There are two RS485 channels on the development board. The corresponding device files in the system are */dev/ttyS1* and */dev/ttyS3*. RS485 equipment operates in the same way as PS_UART and PL_UART. However, it should be noted that the **baud rate of these two RS485 is fixed at 9600** due to the IP limit at the PL. Setting baud rate of these two RS485 to other values will prevent the device from working properly.
 #### 4.3Use the built-in script in Linux to test RS485
 Interconnect two RS485 channels：\
 ![](../.images_for_documents/40.png) ![](../.images_for_documents/41.png)\

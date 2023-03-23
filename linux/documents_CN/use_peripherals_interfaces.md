@@ -59,16 +59,16 @@ PL_UART区别于PS_UART，是ZYNQMP芯片中FPGA端(也叫做PL端)的UART接口
 ![](../.images_for_documents/62.png)\
 **COM的编号取决于你的PC，如果此时你的PS_UART和PL_UART都接在PC上，那么至少能看到两个后缀是*Silicon Labs CP210x USB to UART Bridge* 的COM：**\
 ![](../.images_for_documents/61.png)\
-在开发板的Linux系统中PL_UART设备是 */dev/ttyPS3*，默认波特率是9600，可以用这个命令来设置波特率：\
-`stty -F /dev/ttyPS3 ispeed 115200 ospeed 115200 cs8`\
+在开发板的Linux系统中PL_UART设备是 */dev/ttyS2*，默认波特率是9600，可以用这个命令来设置波特率：\
+`stty -F /dev/ttyS2 ispeed 115200 ospeed 115200 cs8`\
 我们把它设置成115200和串口工具的设置对应，然后使用命令：\
-`cat /dev/ttyPS3`\
+`cat /dev/ttyS2`\
 来显示PL_UART收到的数据：\
 ![](../.images_for_documents/63.png)\
 在串口工具中发送一些数据，可以看到系统中收到了这些数据：\
 ![](../.images_for_documents/64.png)\
-在键盘上按*ctrl v*退出*cat /dev/ttyPS3*命令，然后用命令：\
-`echo "PL_UART test" > /dev/ttyPS3`\
+在键盘上按*ctrl c* 退出*cat /dev/ttyS2*命令，然后用命令：\
+`echo "PL_UART test" > /dev/ttyS2`\
 通过PL_UART发送数据*PL_UART test* 到PC，PC上串口工具可以收到数据：\
 ![](../.images_for_documents/65.png)
 #### 3.3使用系统内置的脚本测试PL_UART
@@ -85,7 +85,7 @@ RS485是一种常用的串行通信协议，也称为EIA-485协议。它是由�
 RS485可以支持多个设备之间的点对点通信和多点通信，即一个主机可以与多个从机进行通信，也可以实现多个从机之间的通信，实现灵活的网络拓扑结构。RS485的传输距离最远可以达到1200米，传输速度可以达到10Mbps，在实际应用中，通常采用的是9600bps或者115200bps的通信速率。\
 在我们的开发板中RS485是PL端的设备，是通过FPGA的IP实现的。
 #### 4.2在Linux中使用RS485
-开发板上有两路RS485，在系统中对应的设备文件是 */dev/ttyS1* 和 */dev/ttyS2* 。**RS485设备的操作方式和UART相同**。但需要注意，由于PL端IP的限制，这两个RS485的波特率固定为9600，设置成其他值会使设备无法正常工作。
+开发板上有两路RS485，在系统中对应的设备文件是 */dev/ttyS1* 和 */dev/ttyS3* 。**RS485设备的操作方式和UART相同**。但需要注意，由于PL端IP的限制，这两个RS485的波特率固定为9600，设置成其他值会使设备无法正常工作。
 #### 4.3使用系统内置的脚本测试RS485
 把两路RS485互联：\
 ![](../.images_for_documents/40.png) ![](../.images_for_documents/41.png)\
